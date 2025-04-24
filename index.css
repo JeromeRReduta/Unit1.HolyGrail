@@ -1,0 +1,50 @@
+.half {
+  min-height: 50vh;
+}
+
+.full {
+  min-height: 100vh;
+}
+
+body {
+  display: grid;
+}
+
+@media (width >= 600px) {
+  .half,
+  .full {
+    min-height: initial;
+  }
+
+  body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas:
+      "header header header"
+      "left main right"
+      "footer footer footer";
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  .chocolate {
+    grid-area: left;
+  }
+
+  .strawberry {
+    grid-area: right;
+  }
+}
